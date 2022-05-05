@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 
+use App\Entity\Entreprise;
 use App\Entity\Pfe;
 
 use App\Form\PfeType;
@@ -45,9 +46,9 @@ public function addPfe(ManagerRegistry $doctrine,Request $request,Pfe $pfe=null)
     }
     #[Route('/pfe/listeentre', name: 'pfe_listes')]
     public function showStats(ManagerRegistry $doctrine):Response{
-        $repository=$doctrine->getRepository(Pfe::class);
-        $pfes=$repository->findAll();
-        return $this->render('pfe/liste2.html.twig',['pfes'=>$pfes]);
+        $repository=$doctrine->getRepository()(Entreprise::class);
+        $entre=$repository->findAll();
+        return $this->render('pfe/liste2.html.twig',['entre'=>$entre]);
     }
 
 

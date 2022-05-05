@@ -1,0 +1,14 @@
+{% extends'boot.html.twig' %}
+
+{%block pageTitle%}Liste des entreprises {%endblock%}
+{%block body %}
+    <div class="row">
+        {%for entre in entre %}
+            <div class="card m-auto mb-2" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{entre.getDesignation()}}</h5>
+                </div>
+            </div>
+        {%endfor%}
+    </div>
+{%endblock%}

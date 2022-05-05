@@ -63,4 +63,9 @@ class Pfe
 
         return $this;
     }
+    public function __toString(): string
+    {
+        return $this->getNometudiant().' '.$this->getTitre().' '.$this->getEntreprise() ;
+        // TODO: Implement __toString() method.
+    }
 }

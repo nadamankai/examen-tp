@@ -20,11 +20,13 @@ class Personne extends Fixture
             $pfe->setNometudiant($faker->name." ".$faker->firstName);
             $entre = new Entreprise();
             $entre->setDesignation($faker->company);
-            $manager->persist($entre);
             $pfe->setEntreprise($entre);
+            $manager->persist($entre);
 
-            $manager->flush();
+
+
         }
+        $manager->flush();
 
     }
 }
